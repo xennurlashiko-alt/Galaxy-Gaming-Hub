@@ -284,23 +284,6 @@
             font-size: 1.1rem;
         }
 
-        .game-link {
-            display: inline-block;
-            margin-top: 0.9rem;
-            padding: 0.55rem 0.8rem;
-            border: 1px solid var(--primary);
-            border-radius: 8px;
-            color: var(--primary-2);
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        .game-link:hover,
-        .game-link:focus-visible {
-            background: var(--primary);
-            color: #031015;
-        }
-
         .creative-section {
             padding: 90px 0;
             background: rgba(255,255,255,0.02);
@@ -847,7 +830,7 @@
             <nav class="nav-links" aria-label="Main navigation">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#games">Games</a>
+                <a href="#games">Official Games</a>
                 <a href="#missions">Missions</a>
                 <a href="#avatar">Avatar</a>
                 <a href="#store">Store</a>
@@ -1434,69 +1417,21 @@
 
         <section id="games" class="section alt protected-section">
             <div class="container">
-                <h2>Games Available</h2>
+                <h2>Official Game Launchers</h2>
+                <p class="store-intro">Install an official launcher, then use Open Installed App to start the game.</p>
                 <div class="game-grid">
-                    <div class="game-card">
-                        <div class="icon">🎮</div>
-                        <h3>Fortnite</h3>
-                        <a class="game-link" href="https://www.fortnite.com/" data-game="Fortnite" target="_blank" rel="noopener noreferrer">Open Fortnite</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🕹️</div>
-                        <h3>Valorant</h3>
-                        <a class="game-link" href="https://playvalorant.com/" data-game="Valorant" target="_blank" rel="noopener noreferrer">Open Valorant</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🧱</div>
-                        <h3>Minecraft</h3>
-                        <a class="game-link" href="https://www.minecraft.net/" data-game="Minecraft" target="_blank" rel="noopener noreferrer">Open Minecraft</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🏆</div>
-                        <h3>PUBG</h3>
-                        <a class="game-link" href="https://pubg.com/" data-game="PUBG" target="_blank" rel="noopener noreferrer">Open PUBG</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">⚽</div>
-                        <h3>FIFA</h3>
-                        <a class="game-link" href="https://www.ea.com/games/ea-sports-fc" data-game="FIFA" target="_blank" rel="noopener noreferrer">Open EA SPORTS FC</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">⚔️</div>
-                        <h3>Genshin Impact</h3>
-                        <a class="game-link" href="https://genshin.hoyoverse.com/" data-game="Genshin Impact" target="_blank" rel="noopener noreferrer">Open Genshin Impact</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🌊</div>
-                        <h3>Wuthering Waves</h3>
-                        <a class="game-link" href="https://wutheringwaves.kurogames.com/" data-game="Wuthering Waves" target="_blank" rel="noopener noreferrer">Open Wuthering Waves</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">⚡</div>
-                        <h3>Honkai Impact 3rd</h3>
-                        <a class="game-link" href="https://honkaiimpact3.hoyoverse.com/" data-game="Honkai Impact 3rd" target="_blank" rel="noopener noreferrer">Open Honkai Impact</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🚂</div>
-                        <h3>Honkai: Star Rail</h3>
-                        <a class="game-link" href="https://hsr.hoyoverse.com/" data-game="Honkai: Star Rail" target="_blank" rel="noopener noreferrer">Open Star Rail</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🔨</div>
-                        <h3>Zenless Zone Zero</h3>
-                        <a class="game-link" href="https://zenless.hoyoverse.com/" data-game="Zenless Zone Zero" target="_blank" rel="noopener noreferrer">Open Zenless Zone Zero</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🎮</div>
-                        <h3>PlayStation Games</h3>
-                        <a class="game-link" href="https://store.playstation.com/en-us/pages/latest" data-game="PlayStation Games" target="_blank" rel="noopener noreferrer">Explore PlayStation</a>
-                    </div>
-                    <div class="game-card">
-                        <div class="icon">🕹️</div>
-                        <h3>Nintendo Games</h3>
-                        <a class="game-link" href="https://www.nintendo.com/store/games/" data-game="Nintendo Games" target="_blank" rel="noopener noreferrer">Browse Nintendo</a>
-                    </div>
-                </div>
+                    <article class="game-card"><div class="icon">🎮</div><h3>Fortnite</h3><a class="app-link" href="https://store.epicgames.com/en-US/download" target="_blank" rel="noopener noreferrer">Get Epic Games Launcher</a><a class="app-link game-launch-link" href="com.epicgames.launcher://apps/Fortnite?action=launch" data-game="Fortnite">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🕹️</div><h3>VALORANT</h3><a class="app-link" href="https://playvalorant.com/en-us/download/" target="_blank" rel="noopener noreferrer">Get Riot Client</a><a class="app-link game-launch-link" href="riotclient://launch-product/valorant" data-game="VALORANT">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🧱</div><h3>Minecraft</h3><a class="app-link" href="https://www.minecraft.net/en-us/download" target="_blank" rel="noopener noreferrer">Get Minecraft Launcher</a><a class="app-link game-launch-link" href="minecraft://" data-game="Minecraft">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🏆</div><h3>PUBG</h3><a class="app-link" href="https://store.steampowered.com/about/" target="_blank" rel="noopener noreferrer">Get Steam</a><a class="app-link game-launch-link" href="steam://run/578080" data-game="PUBG">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">⚽</div><h3>EA SPORTS FC</h3><a class="app-link" href="https://www.ea.com/ea-app" target="_blank" rel="noopener noreferrer">Get EA app</a><a class="app-link game-launch-link" href="eaapp://" data-game="EA SPORTS FC">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">⚔️</div><h3>Genshin Impact</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=genshin" data-game="Genshin Impact">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🌊</div><h3>Wuthering Waves</h3><a class="app-link" href="https://wutheringwaves.kurogames.com/" target="_blank" rel="noopener noreferrer">Get Wuthering Waves</a><a class="app-link game-launch-link" href="wutheringwaves://" data-game="Wuthering Waves">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">⚡</div><h3>Honkai Impact 3rd</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=bh3" data-game="Honkai Impact 3rd">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🚂</div><h3>Honkai: Star Rail</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=hkrpg" data-game="Honkai: Star Rail">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🔨</div><h3>Zenless Zone Zero</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=nap" data-game="Zenless Zone Zero">Open Installed App</a></article>               
+                 </div>
+                <p class="store-status" id="launcher-status" role="status" aria-live="polite">Install a launcher first, then choose Open Installed App.</p>
             </div>
         </section>
 

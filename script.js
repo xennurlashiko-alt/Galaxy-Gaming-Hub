@@ -265,17 +265,10 @@ document.querySelectorAll('.quest-button').forEach((button) => {
     });
 });
 
-const gameLinks = document.querySelectorAll('.game-link');
-gameLinks.forEach((link) => {
+document.querySelectorAll('.game-launch-link').forEach((link) => {
     link.addEventListener('click', () => {
-        const game = link.dataset.game;
-        if (!game) return;
-        const playedGames = getPlayedGames();
-        if (!playedGames.includes(game)) {
-            playedGames.push(game);
-            localStorage.setItem(playedGamesStorageKey, JSON.stringify(playedGames));
-        }
-        updateMissionButtons();
+        const status = document.querySelector('#launcher-status');
+        if (status) status.textContent = `Opening ${link.dataset.game}. If nothing happens, install the official launcher first.`;
     });
 });
 
@@ -422,4 +415,23 @@ document.querySelector('#gamer-chat-form')?.addEventListener('submit', (event) =
     messages.append(post);
     form.reset();
     messages.scrollTop = messages.scrollHeight;
-});
+});  
+function openGame(event, gameName) {
+    event.preventDefault();
+
+    const protocols = {
+        "Wuthering Waves": "galaxy-wuthering://launch",
+        "Genshin Impact": "galaxy-genshin://launch",
+        "Honkai Impact 3rd": "galaxy-honkai3rd://launch",
+        "Honkai: Star Rail": "galaxy-starrail://launch"
+    };
+
+    const protocol = protocols[gameName];
+
+    if (!protocol) {
+        alert("Game launcher is not configured.");
+        return;
+    }
+
+    window.location.href = protocol;
+}
