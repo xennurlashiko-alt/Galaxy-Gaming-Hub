@@ -435,3 +435,10 @@ function openGame(event, gameName) {
 
     window.location.href = protocol;
 }
+function playGame(gameName){
+    alert(
+        gameName +
+        " is installed on your device.\n\n" +
+        "For security reasons, websites cannot directly launch desktop apps."
+    );
+}
