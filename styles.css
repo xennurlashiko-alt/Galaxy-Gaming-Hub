@@ -427,3 +427,140 @@ leaderboard-container{
 .third{
     border-left:5px solid #cd7f32;
 }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top, #064b73, #021a31 55%, #01101f);
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+
+    padding: 30px;
+
+    background: rgba(7, 38, 62, 0.85);
+
+    border: 1px solid #38cfff;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 30px rgba(0, 190, 255, 0.25);
+}
+
+.title {
+    text-align: center;
+}
+
+.chat-icon {
+    font-size: 45px;
+}
+
+h1 {
+    margin: 5px 0;
+    font-size: 42px;
+}
+
+h2 {
+    margin: 0 0 25px;
+    font-size: 32px;
+    color: #35d9ff;
+}
+
+.chat-box {
+    height: 350px;
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+    background: #03182c;
+
+    border: 2px solid #35d9ff;
+    border-radius: 18px;
+}
+
+.message {
+    margin-bottom: 18px;
+    padding: 14px;
+
+    line-height: 1.6;
+
+    border-radius: 12px;
+}
+
+.alexander {
+    background: rgba(0, 150, 220, 0.15);
+}
+
+.user {
+    background: rgba(255, 255, 255, 0.08);
+    text-align: right;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+#messageInput {
+    flex: 1;
+
+    padding: 16px;
+
+    font-size: 16px;
+
+    color: white;
+    background: #02182b;
+
+    border: 2px solid #35d9ff;
+    border-radius: 12px;
+
+    outline: none;
+}
+
+#messageInput:focus {
+    box-shadow: 0 0 12px #35d9ff;
+}
+
+#sendButton {
+    width: 65px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #12aeea;
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background: #35d9ff;
+}
+
+#status {
+    margin-top: 10px;
+
+    text-align: center;
+
+    color: #8deaff;
+    font-size: 14px;
+}
