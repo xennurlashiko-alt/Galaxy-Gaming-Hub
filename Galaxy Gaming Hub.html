@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Gaming Hub</title>
+    <link rel="stylesheet" href="./Galaxy Gaming Hub_files/styles.css">
+    <!-- Previous inline stylesheet retained for reference during the CSS split.
+    <style>
+        :root {
+            --bg: #07131f;
+            --bg-2: #0f1f2d;
+            --panel: rgba(16, 28, 42, 0.9);
+            --primary: #00e5ff;
+            --primary-2: #74f1ff;
+            --text: #edf7ff;
+            --muted: #b6c7d7;
+            --line: rgba(255,255,255,0.12);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(0, 229, 255, 0.12), transparent 35%),
+                linear-gradient(180deg, var(--bg), var(--bg-2));
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 19, 31, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 76px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-2);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand-mark {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 30% 30%, #10314d, #081426 55%);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 18px rgba(0, 229, 255, 0.25);
+        }
+
+        .brand-mark svg {
+            width: 42px;
+            height: 42px;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .hero {
+            padding: 90px 0 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            font-weight: 700;
+            font-size: 0.76rem;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(2.6rem, 5vw, 4.5rem);
+            line-height: 1.05;
+            color: var(--text);
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 650px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.6rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.6rem;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #031015;
+        }
+
+        .btn.secondary {
+            border: 1px solid var(--line);
+            color: var(--text);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .hero-card {
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(18, 30, 45, 0.95), rgba(8, 19, 28, 0.9));
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.28);
+        }
+
+        .hero-card h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .hero-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: var(--muted);
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section.alt {
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+        }
+
+        .about-box,
+        .contact-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--primary);
+            border-radius: 16px;
+            padding: 1.5rem 1.25rem;
+            margin-top: 1.25rem;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+        }
+
+        .info-box p {
+            margin: 0 0 1rem;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-box p,
+        .contact-box p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.5rem;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+
+        .card .icon {
+            font-size: 2.3rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            margin: 0.7rem 0 0.5rem;
+            font-size: 1.35rem;
+            color: var(--text);
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .game-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.4rem 1rem;
+            text-align: center;
+            box-shadow: 0 18px 30px rgba(0,0,0,0.12);
+        }
+
+        .game-card .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-card h3 {
+            margin: 0;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+
+        .creative-section {
+            padding: 90px 0;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .creative-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .creative-card {
+            background: linear-gradient(180deg, rgba(8, 20, 38, 0.92), rgba(10, 25, 35, 0.92));
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+
+        .creative-card .icon {
+            font-size: 2.4rem;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+
+        .creative-card h3 {
+            margin: 0 0 0.7rem;
+            color: #FFFFFF;
+            font-size: 1.4rem;
+        }
+
+        .creative-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .app-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.1rem;
+        }
+
+        .app-link {
+            display: inline-block;
+            padding: 0.55rem 0.75rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary-2);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .app-link:hover,
+        .app-link:focus-visible {
+            background: var(--primary);
+            color: #031015;
+        }
+
+        .service-section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .service-section .service-box {
+            background-color: #081426;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+        }
+
+        .service-section h2 {
+            color: #00AEEF;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .service-section h3 {
+            color: #FFFFFF;
+            margin-top: 0;
+        }
+
+        .signup-section {
+            padding: 32px 0 72px;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .signup-box {
+            background: linear-gradient(180deg, rgba(18, 30, 45, 0.98), rgba(8, 19, 28, 0.96));
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 520px;
+            margin: 0 auto;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.24);
+        }
+
+        .signup-box h2 {
+            color: var(--primary);
+            text-align: center;
+            margin: 0 0 0.35rem;
+        }
+
+        .auth-intro {
+            margin: 0 0 1.25rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .auth-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            padding: 0.25rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        .auth-tab {
+            border: 0;
+            border-radius: 8px;
+            padding: 0.7rem;
+            background: transparent;
+            color: var(--muted);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .auth-tab.active {
+            background: var(--primary);
+            color: #031015;
+        }
+
+        .signup-box form {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .auth-panel[hidden] {
+            display: none;
+        }
+
+        .protected-section {
+            display: none;
+        }
+
+        body.auth-locked .hero,
+        body.auth-locked footer {
+            display: none;
+        }
+
+        body.auth-locked .nav-links a:not([href="#account"]) {
+            display: none;
+        }
+
+        body.authenticated .protected-section {
+            display: block;
+        }
+
+        .auth-status {
+            min-height: 1.5rem;
+            margin: 1rem 0 0;
+            color: var(--primary-2);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .signup-box input,
+        .signup-box textarea {
+            width: 100%;
+            margin-top: 0.35rem;
+            padding: 0.8rem 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: #081426;
+            color: var(--text);
+            font: inherit;
+        }
+
+        .signup-box input:focus,
+        .signup-box textarea:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 1px;
+        }
+
+        .signup-box textarea {
+            width: 80%;
+            max-width: 500px;
+            min-height: 120px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+            background-color: #081426;
+            color: white;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .signup-box label {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .signup-box button[type="submit"] {
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: white;
+            border: none;
+            padding: 0.85rem 1.2rem;
+            border-radius: 8px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .signup-box button[type="submit"]:hover {
+            box-shadow: 0 10px 24px rgba(0, 229, 255, 0.24);
+        }
+
+        #newsletter {
+            width: min(700px, 92%);
+            background-color: #081426;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        #newsletter h2 {
+            color: #00AEEF;
+        }
+
+        #newsletter p {
+            color: var(--muted);
+        }
+
+        #newsletter form {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.25rem;
+        }
+
+        #newsletter input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #00AEEF;
+            border-radius: 5px;
+            background: #ffffff;
+            color: #081426;
+            font-size: 16px;
+        }
+
+        #newsletter button {
+            background-color: #00AEEF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #newsletter button:hover {
+            background-color: #0077CC;
+        }
+
+        .form-status {
+            min-height: 1.5rem;
+            margin: 0.8rem 0 0;
+            color: var(--primary-2);
+            font-weight: 700;
+        }
+
+        @media (max-width: 480px) {
+            #newsletter form {
+                flex-direction: column;
+            }
+        }
+
+        #videos {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #videos h2 {
+            color: #00AEEF;
+        }
+
+        #videos video {
+            margin: 10px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+        }
+
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .video-grid video {
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+            background: #081426;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+        
+        .stat strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--primary-2);
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .contact-item {
+            padding: 1rem 1.1rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--primary-2);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #00AEEF;
+            background-color: #081426;
+            color: white;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #b6c7d7;
+        }
+
+        .contact-form button {
+            border: 0;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #06131b;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .contact-form button:hover {
+            box-shadow: 0 14px 30px rgba(0, 229, 255, 0.25);
+        }
+
+        .chat-box {
+            min-height: 150px;
+            max-height: 260px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #081426;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+        }
+
+        .chat-box p {
+            margin: 0 0 0.8rem;
+            color: var(--muted);
+        }
+
+        .chat-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .chat-box strong {
+            color: var(--primary-2);
+        }
+
+        .chat-form {
+            display: flex;
+            gap: 0.7rem;
+        }
+
+        .chat-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 0.85rem 1rem;
+            border: 2px solid #00AEEF;
+            border-radius: 10px;
+            background: #081426;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .chat-form input::placeholder {
+            color: var(--muted);
+        }
+
+        .chat-form button {
+            border: 0;
+            border-radius: 10px;
+            padding: 0.85rem 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #06131b;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            .chat-form {
+                flex-direction: column;
+            }
+        }
+
+        #chat {
+            width: min(400px, 92%);
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #chat .chat-box {
+            height: 200px;
+            background-color: #081426;
+            color: white;
+            border: 2px solid #00AEEF;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            overflow-y: auto;
+        }
+
+        #chat input {
+            width: 70%;
+            flex: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #chat button {
+            padding: 10px 15px;
+            background-color: #00AEEF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #06131b;
+            padding: 0.9rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 26px 0 45px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+        }
+
+        @media (max-width: 760px) {
+            .hero-grid,
+            .feature-grid,
+            .menu-grid,
+            .contact-grid,
+            .stats,
+            .nav {
+                display: block;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .nav-links {
+                justify-content: center;
+                padding-top: 0.6rem;
+            }
+        }
+    </style>
+    -->
+</head>
+<body class="auth-locked">
+    <header class="topbar">
+        <div class="container nav">
+            <div class="brand" aria-label="Galaxy Gaming Coffee Shop brand">
+                <div class="brand-mark">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Galaxy logo icon">
+                        <defs>
+                            <lineargradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#74f1ff"></stop>
+                                <stop offset="100%" stop-color="#00e5ff"></stop>
+                            </lineargradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="url(#g1)" stroke-width="4"></circle>
+                        <circle cx="45" cy="42" r="8" fill="#74f1ff" opacity="0.9"></circle>
+                        <path d="M29 56c0-10 8-18 18-18h26c10 0 18 8 18 18v13c0 12-10 22-22 22H51c-12 0-22-10-22-22V56z" fill="none" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"></path>
+                        <path d="M36 51h48" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"></path>
+                        <path d="M49 75h22l-4 11H53l-4-11z" fill="url(#g1)" opacity="0.9"></path>
+                        <path d="M29 69h62" stroke="#74f1ff" stroke-width="4" stroke-linecap="round" opacity="0.75"></path>
+                        <circle cx="84" cy="36" r="4" fill="#ffd166"></circle>
+                        <circle cx="89" cy="53" r="3" fill="#ffd166" opacity="0.8"></circle>
+                        <path d="M88 75l9-11M94 82l11-15" stroke="#74f1ff" stroke-width="3" stroke-linecap="round" opacity="0.8"></path>
+                    </svg>
+                </div>
+                <span>Galaxy</span>
+            </div>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#about">About</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#services">Services</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#games">Official Games</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#missions">Missions</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#avatar">Avatar</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#store">Store</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#editing">Editor &amp; Animation</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#events">Events</a>
+                <a href="https://xennurlashiko-alt.github.io/Galaxy-Gaming-Hub/#account">Account</a>
+                <button class="logout-button" id="logout-button" type="button">Log Out</button>
+            </nav>
+
+            <div class="coin-bar" aria-label="Galaxy coins balance">
+                <span class="coin-name">Coins</span>
+                <strong id="coin-balance">1335</strong>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow">Gaming lounge and Hub</div>
+                    <h1>Level up with comfort and fun with 
+                     your friends and families and meet other players.</h1>
+                    <p>Welcome to Galaxy Gaming Hub,spend your time playing games in a modern and friendly atmosphere with friends or family.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="missions" class="section protected-section">
+            <div class="container">
+                <h2>Game Missions</h2>
+                <div class="quest-grid">
+                    <article class="quest-card">
+                        <h3>Fortnite</h3>
+                        <p>Win 1 match or complete 3 challenges.</p>
+                        <button class="quest-button" type="button" data-game="Fortnite" data-reward="30" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Valorant</h3>
+                        <p>Win 2 rounds in a ranked or casual match.</p>
+                        <button class="quest-button" type="button" data-game="Valorant" data-reward="35" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Minecraft</h3>
+                        <p>Build a base and survive for 20 minutes.</p>
+                        <button class="quest-button" type="button" data-game="Minecraft" data-reward="25" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>PUBG</h3>
+                        <p>Reach the final circle or win a squad match.</p>
+                        <button class="quest-button" type="button" data-game="PUBG" data-reward="40" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>FIFA</h3>
+                        <p>Win a local match or complete a tournament.</p>
+                        <button class="quest-button" type="button" data-game="FIFA" data-reward="30" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Genshin Impact</h3>
+                        <p>Clear a domain or finish a daily quest.</p>
+                        <button class="quest-button" type="button" data-game="Genshin Impact" data-reward="50" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Wuthering Waves</h3>
+                        <p>Complete 1 combat chapter or daily mission.</p>
+                        <button class="quest-button" type="button" data-game="Wuthering Waves" data-reward="45" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Honkai Impact 3rd</h3>
+                        <p>Finish a battle log event or raid mission.</p>
+                        <button class="quest-button" type="button" data-game="Honkai Impact 3rd" data-reward="45" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Honkai: Star Rail</h3>
+                        <p>Clear one Calyx challenge or trail mission.</p>
+                        <button class="quest-button" type="button" data-game="Honkai: Star Rail" data-reward="55" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Zenless Zone Zero</h3>
+                        <p>Finish a combat mission or event stage.</p>
+                        <button class="quest-button" type="button" data-game="Zenless Zone Zero" data-reward="50" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>PlayStation Games</h3>
+                        <p>Complete your assigned challenge and win rewards.</p>
+                        <button class="quest-button" type="button" data-game="PlayStation Games" data-reward="60" disabled="">Play game to unlock</button>
+                    </article>
+                    <article class="quest-card">
+                        <h3>Nintendo Games</h3>
+                        <p>Finish a multiplayer or challenge mission.</p>
+                        <button class="quest-button" type="button" data-game="Nintendo Games" data-reward="60" disabled="">Play game to unlock</button>
+                    </article>
+                </div>
+                <p class="quest-status" id="quest-status" aria-live="polite">Complete a mission to earn coins.</p>
+            </div>
+        </section>
+
+        <section id="avatar" class="section avatar-section protected-section">
+            <div class="container">
+                <h2>Avatar Studio</h2>
+                <p class="avatar-intro">Create a look that is completely yours, then save it to your Galaxy profile.</p>
+                <div class="avatar-studio">
+                    <div class="avatar-preview backdrop-ocean" id="avatar-preview" aria-label="Your custom avatar preview">
+                        <div class="avatar-aura"></div>
+                        <div class="avatar-character">
+                            <div class="avatar-accessory " id="avatar-accessory-preview" aria-hidden="true" aria-label=""></div>
+                            <div class="avatar-hair hair-nebula" id="avatar-hair-preview" aria-hidden="true" aria-label="Nebula Hair"></div>
+                            <div class="avatar-head" id="avatar-head" style="background-color: rgb(246, 199, 162);">
+                                <span class="avatar-eyes">● ●</span>
+                                <span class="avatar-mouth">⌣</span>
+                            </div>
+                            <div class="avatar-body outfit-neon" id="avatar-body" aria-label="Neon Runner"></div>
+                        </div>
+                        <strong class="avatar-name" id="avatar-name">Jewel</strong>
+                        <span class="avatar-status" id="avatar-status">Ready to customize</span>
+                    </div>
+                    <form class="avatar-controls" id="avatar-form">
+                        <div class="avatar-control">
+                            <label for="avatar-name-input">Avatar username</label>
+                            <input id="avatar-name-input" type="text" maxlength="24" placeholder="Your player username" autocomplete="off" required="">
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-skin">Skin tone</label>
+                            <select id="avatar-skin">
+                                <option value="sunrise">Sunrise</option>
+                                <option value="honey">Honey</option>
+                                <option value="cocoa">Cocoa</option>
+                                <option value="moon">Moonlight</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-hair">Hairstyle</label>
+                            <select id="avatar-hair">
+                                <option value="nebula">Nebula</option>
+                                <option value="flare">Solar Flare</option>
+                                <option value="comet">Comet Curls</option>
+                                <option value="visor">Future Visor</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-outfit">Outfit</label>
+                            <select id="avatar-outfit">
+                                <option value="neon">Neon Runner</option>
+                                <option value="royal">Royal Champion</option>
+                                <option value="cyber">Cyber Pilot</option>
+                                <option value="cosmic">Cosmic Explorer</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-accessory">Accessory</label>
+                            <select id="avatar-accessory">
+                                <option value="none">No accessory</option>
+                                <option value="crown">Star Crown</option>
+                                <option value="headset">Pro Headset</option>
+                                <option value="visor">Holo Visor</option>
+                            </select>
+                        </div>
+                        <div class="avatar-control">
+                            <label for="avatar-background">Profile backdrop</label>
+                            <select id="avatar-background">
+                                <option value="aurora">Aurora</option>
+                                <option value="sunset">Solar Sunset</option>
+                                <option value="ocean">Deep Ocean</option>
+                                <option value="royal">Royal Pulse</option>
+                            </select>
+                        </div>
+                        <button class="avatar-save" type="submit">Save Avatar</button>
+                        <p class="avatar-form-status" id="avatar-form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="dashboard">
+    <h2>Galaxy Player Profile</h2>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Level</h3>
+            <p id="level">1</p>
+        </div>
+
+        <div class="card">
+            <h3>XP</h3>
+            <p id="xp">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Coins</h3>
+            <p id="coins">100</p>
+        </div>
+    </div>
+
+    <button onclick="earnXP()">Complete Mission</button>
+    <button onclick="dailyReward()">Daily Reward</button>
+
+    <h2>Inventory</h2>
+    <ul id="inventory">
+        <li>No items owned yet</li>
+    </ul>
+
+    <h2>Galaxy Business Dashboard</h2>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Users</h3>
+            <p id="users">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Items Sold</h3>
+            <p id="sold">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Revenue</h3>
+            <p id="revenue">0</p>
+        </div>
+    </div>
+</section>
+
+        <section id="store" class="section alt protected-section">
+            <div class="container">
+                <h2>Galaxy Store</h2>
+                <p class="store-intro">Choose from multiple cosmetic items for every game with your Galaxy coins.</p>
+                <div class="store-grid">
+                    <article class="store-item">
+                        <div class="store-icon">🎮</div>
+                        <h3>Fortnite</h3>
+                        <p>Nova Ranger skin for your next Battle Royale drop.</p>
+                        <div class="store-meta">
+                            <span>90 coins</span><button class="store-buy" type="button" data-item="Nova Ranger Skin" data-game="Fortnite" data-price="90">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🌌</div>
+                        <h3>Fortnite</h3>
+                        <p>Galaxy Glider trail for a colorful landing.</p>
+                        <div class="store-meta">
+                            <span>75 coins</span><button class="store-buy" type="button" data-item="Galaxy Glider Trail" data-game="Fortnite" data-price="75">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🕹️</div>
+                        <h3>Valorant</h3>
+                        <p>Cosmic Vandal weapon skin for competitive matches.</p>
+                        <div class="store-meta">
+                            <span>110 coins</span><button class="store-buy" type="button" data-item="Cosmic Vandal Skin" data-game="Valorant" data-price="110">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🔫</div>
+                        <h3>Valorant</h3>
+                        <p>Starlight Ghost pistol skin for clutch rounds.</p>
+                        <div class="store-meta">
+                            <span>85 coins</span><button class="store-buy" type="button" data-item="Starlight Ghost Skin" data-game="Valorant" data-price="85">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🧱</div>
+                        <h3>Minecraft</h3>
+                        <p>Galaxy Builder character skin for creative worlds.</p>
+                        <div class="store-meta">
+                            <span>95 coins</span><button class="store-buy" type="button" data-item="Galaxy Builder Skin" data-game="Minecraft" data-price="95">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🪓</div>
+                        <h3>Minecraft</h3>
+                        <p>Crystal Pickaxe tool skin for mining adventures.</p>
+                        <div class="store-meta">
+                            <span>70 coins</span><button class="store-buy" type="button" data-item="Crystal Pickaxe Skin" data-game="Minecraft" data-price="70">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🏆</div>
+                        <h3>PUBG</h3>
+                        <p>Night Ops outfit for your next squad match.</p>
+                        <div class="store-meta">
+                            <span>100 coins</span><button class="store-buy" type="button" data-item="Night Ops Outfit" data-game="PUBG" data-price="100">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🎯</div>
+                        <h3>PUBG</h3>
+                        <p>Crimson Marksman weapon wrap for your loadout.</p>
+                        <div class="store-meta">
+                            <span>90 coins</span><button class="store-buy" type="button" data-item="Crimson Marksman Wrap" data-game="PUBG" data-price="90">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">⚽</div>
+                        <h3>FIFA</h3>
+                        <p>Galaxy FC kit to make your team stand out.</p>
+                        <div class="store-meta">
+                            <span>80 coins</span><button class="store-buy" type="button" data-item="Galaxy FC Kit" data-game="FIFA" data-price="80">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🥇</div>
+                        <h3>FIFA</h3>
+                        <p>Golden Boots celebration for your goal replays.</p>
+                        <div class="store-meta">
+                            <span>65 coins</span><button class="store-buy" type="button" data-item="Golden Boots Celebration" data-game="FIFA" data-price="65">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">⚔️</div>
+                        <h3>Genshin Impact</h3>
+                        <p>Starlight glider cosmetic for your Traveler.</p>
+                        <div class="store-meta">
+                            <span>120 coins</span><button class="store-buy" type="button" data-item="Starlight Glider" data-game="Genshin Impact" data-price="120">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">✨</div>
+                        <h3>Genshin Impact</h3>
+                        <p>Celestial namecard for your Traveler profile.</p>
+                        <div class="store-meta">
+                            <span>85 coins</span><button class="store-buy" type="button" data-item="Celestial Namecard" data-game="Genshin Impact" data-price="85">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🌊</div>
+                        <h3>Wuthering Waves</h3>
+                        <p>Tidal Echo aura for your next combat chapter.</p>
+                        <div class="store-meta">
+                            <span>115 coins</span><button class="store-buy" type="button" data-item="Tidal Echo Aura" data-game="Wuthering Waves" data-price="115" disabled="">Owned</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🌙</div>
+                        <h3>Wuthering Waves</h3>
+                        <p>Moonlit Resonator avatar frame for your profile.</p>
+                        <div class="store-meta">
+                            <span>90 coins</span><button class="store-buy" type="button" data-item="Moonlit Resonator Frame" data-game="Wuthering Waves" data-price="90" disabled="">Owned</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">⚡</div>
+                        <h3>Honkai Impact 3rd</h3>
+                        <p>Thunder Valkyrie battle suit cosmetic.</p>
+                        <div class="store-meta">
+                            <span>125 coins</span><button class="store-buy" type="button" data-item="Thunder Valkyrie Suit" data-game="Honkai Impact 3rd" data-price="125">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🌠</div>
+                        <h3>Honkai Impact 3rd</h3>
+                        <p>Starlit weapon effect for your favorite Valkyrie.</p>
+                        <div class="store-meta">
+                            <span>95 coins</span><button class="store-buy" type="button" data-item="Starlit Weapon Effect" data-game="Honkai Impact 3rd" data-price="95">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🚂</div>
+                        <h3>Honkai: Star Rail</h3>
+                        <p>Comet Trail profile badge for your journey.</p>
+                        <div class="store-meta">
+                            <span>105 coins</span><button class="store-buy" type="button" data-item="Comet Trail Badge" data-game="Honkai: Star Rail" data-price="105">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🚀</div>
+                        <h3>Honkai: Star Rail</h3>
+                        <p>Stellar Express profile banner for your journey.</p>
+                        <div class="store-meta">
+                            <span>90 coins</span><button class="store-buy" type="button" data-item="Stellar Express Banner" data-game="Honkai: Star Rail" data-price="90">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🔨</div>
+                        <h3>Zenless Zone Zero</h3>
+                        <p>Neon Proxy avatar frame for your Inter-Knot profile.</p>
+                        <div class="store-meta">
+                            <span>100 coins</span><button class="store-buy" type="button" data-item="Neon Proxy Frame" data-game="Zenless Zone Zero" data-price="100">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🎧</div>
+                        <h3>Zenless Zone Zero</h3>
+                        <p>Hollow Beats player card for your Inter-Knot profile.</p>
+                        <div class="store-meta">
+                            <span>80 coins</span><button class="store-buy" type="button" data-item="Hollow Beats Player Card" data-game="Zenless Zone Zero" data-price="80">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🎮</div>
+                        <h3>PlayStation Games</h3>
+                        <p>Galaxy PlayStation avatar pack for your profile.</p>
+                        <div class="store-meta">
+                            <span>130 coins</span><button class="store-buy" type="button" data-item="Galaxy Avatar Pack" data-game="PlayStation Games" data-price="130">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🏅</div>
+                        <h3>PlayStation Games</h3>
+                        <p>Champion trophy badge for your gaming profile.</p>
+                        <div class="store-meta">
+                            <span>75 coins</span><button class="store-buy" type="button" data-item="Champion Trophy Badge" data-game="PlayStation Games" data-price="75">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">🕹️</div>
+                        <h3>Nintendo Games</h3>
+                        <p>Star Player badge for your Nintendo collection.</p>
+                        <div class="store-meta">
+                            <span>130 coins</span><button class="store-buy" type="button" data-item="Star Player Badge" data-game="Nintendo Games" data-price="130">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item">
+                        <div class="store-icon">⭐</div>
+                        <h3>Nintendo Games</h3>
+                        <p>Rainbow power-up effect for your collection.</p>
+                        <div class="store-meta">
+                            <span>85 coins</span><button class="store-buy" type="button" data-item="Rainbow Power-Up Effect" data-game="Nintendo Games" data-price="85">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">👑</div>
+                        <h3>Fortnite Special</h3>
+                        <p>Galaxy King legendary outfit with a royal reactive style.</p>
+                        <div class="store-meta">
+                            <span>280 coins</span><button class="store-buy" type="button" data-item="Galaxy King Legendary Outfit" data-game="Fortnite" data-price="280">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">💎</div>
+                        <h3>Valorant Special</h3>
+                        <p>Diamond Protocol rifle bundle with an exclusive finisher.</p>
+                        <div class="store-meta">
+                            <span>320 coins</span><button class="store-buy" type="button" data-item="Diamond Protocol Bundle" data-game="Valorant" data-price="320">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🐉</div>
+                        <h3>Minecraft Special</h3>
+                        <p>Ender Dragon armor set for legendary survival builds.</p>
+                        <div class="store-meta">
+                            <span>260 coins</span><button class="store-buy" type="button" data-item="Ender Dragon Armor Set" data-game="Minecraft" data-price="260">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🎖️</div>
+                        <h3>PUBG Special</h3>
+                        <p>Elite Survivor crate with a premium combat outfit.</p>
+                        <div class="store-meta">
+                            <span>300 coins</span><button class="store-buy" type="button" data-item="Elite Survivor Crate" data-game="PUBG" data-price="300">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🏆</div>
+                        <h3>FIFA Special</h3>
+                        <p>World Champion trophy celebration for your club.</p>
+                        <div class="store-meta">
+                            <span>240 coins</span><button class="store-buy" type="button" data-item="World Champion Celebration" data-game="FIFA" data-price="240">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🌟</div>
+                        <h3>Genshin Impact Special</h3>
+                        <p>Celestial Wings glider with a limited starfall effect.</p>
+                        <div class="store-meta">
+                            <span>350 coins</span><button class="store-buy" type="button" data-item="Celestial Wings Glider" data-game="Genshin Impact" data-price="350" disabled="">Owned</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🌌</div>
+                        <h3>Wuthering Waves Special</h3>
+                        <p>Void Resonance outfit with an animated aura.</p>
+                        <div class="store-meta">
+                            <span>330 coins</span><button class="store-buy" type="button" data-item="Void Resonance Outfit" data-game="Wuthering Waves" data-price="330" disabled="">Owned</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">⚡</div>
+                        <h3>Honkai Impact 3rd Special</h3>
+                        <p>Lightning Empress battle suit with a premium effect.</p>
+                        <div class="store-meta">
+                            <span>360 coins</span><button class="store-buy" type="button" data-item="Lightning Empress Suit" data-game="Honkai Impact 3rd" data-price="360">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🚄</div>
+                        <h3>Honkai: Star Rail Special</h3>
+                        <p>Stellar Conductor profile set for elite Trailblazers.</p>
+                        <div class="store-meta">
+                            <span>340 coins</span><button class="store-buy" type="button" data-item="Stellar Conductor Profile Set" data-game="Honkai: Star Rail" data-price="340">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🌀</div>
+                        <h3>Zenless Zone Zero Special</h3>
+                        <p>Hollow Overdrive agent skin with a neon entrance effect.</p>
+                        <div class="store-meta">
+                            <span>310 coins</span><button class="store-buy" type="button" data-item="Hollow Overdrive Agent Skin" data-game="Zenless Zone Zero" data-price="310">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🎮</div>
+                        <h3>PlayStation Special</h3>
+                        <p>Legendary All-Stars avatar collection for your profile.</p>
+                        <div class="store-meta">
+                            <span>275 coins</span><button class="store-buy" type="button" data-item="Legendary All-Stars Collection" data-game="PlayStation Games" data-price="275">Buy</button>
+                        </div>
+                    </article>
+                    <article class="store-item special-item">
+                        <div class="store-icon">🌈</div>
+                        <h3>Nintendo Special</h3>
+                        <p>Rainbow Champion premium badge with animated stars.</p>
+                        <div class="store-meta">
+                            <span>250 coins</span><button class="store-buy" type="button" data-item="Rainbow Champion Badge" data-game="Nintendo Games" data-price="250">Buy</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="inventory" aria-live="polite">
+                    <h3>Your collection</h3>
+                    <p id="inventory-list">Your collection is empty.</p>
+                </div>
+                <p class="store-status" id="store-status" aria-live="polite">Choose a game to spend your coins.</p>
+            </div>
+        </section>
+        <div class="payment-section">
+    <h2>Choose Payment Method</h2>
+
+    <button onclick="pay('GCash')">GCash</button>
+    <button onclick="pay('Maya')">Maya</button>
+    <button onclick="pay('PayPal')">PayPal</button>
+
+    <p id="payment-result"></p>
+</div>
+
+<script>
+function pay(method){
+    document.getElementById("payment-result").innerHTML =
+    "Payment successful via " + method + "!<br>Thank you for your purchase.";
+}
+</script>
+        <section class="dashboard">
+    <h2>Galaxy Player Profile</h2>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Level</h3>
+            <p id="level">1</p>
+        </div>
+
+        <div class="card">
+            <h3>XP</h3>
+            <p id="xp">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Coins</h3>
+            <p id="coins">100</p>
+        </div>
+    </div>
+
+    <button onclick="earnXP()">Complete Mission</button>
+    <button onclick="dailyReward()">Daily Reward</button>
+
+    <h2>Inventory</h2>
+    <ul id="inventory">
+        <li>No items owned yet</li>
+    </ul>
+
+    <h2>Galaxy Business Dashboard</h2>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Users</h3>
+            <p id="users">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Items Sold</h3>
+            <p id="sold">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Revenue</h3>
+            <p id="revenue">0</p>
+        </div>
+    </div>
+</section>
+
+        <section class="signup-section" id="account">
+            <div class="container">
+                <div class="signup-box">
+                    <h2>Welcome to Galaxy</h2>
+                    <p class="auth-intro">Create an account or log in before exploring our gaming lounge.</p>
+
+                    <div class="auth-tabs" role="tablist" aria-label="Account access">
+                        <button class="auth-tab" id="signup-tab" type="button" role="tab" aria-selected="false" aria-controls="signup-panel">Sign Up</button>
+                        <button class="auth-tab active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel">Log In</button>
+                    </div>
+
+                    <div class="auth-panel" id="signup-panel" role="tabpanel" aria-labelledby="signup-tab" hidden="">
+                        <form id="signup-form">
+                            <div>
+                                <label for="full-name">Full Name</label>
+                                <input id="full-name" name="full-name" type="text" placeholder="Enter your name" autocomplete="name" required="">
+                            </div>
+                            <div>
+                                <label for="player-name">Player Name</label>
+                                <input id="player-name" name="player-name" type="text" placeholder="Choose a gamer name" maxlength="24" required="">
+                            </div>
+                            <div>
+                                <label for="signup-email">Email</label>
+                                <input id="signup-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required="">
+                            </div>
+                            <div>
+                                <label for="signup-password">Password</label>
+                                <input id="signup-password" name="password" type="password" placeholder="Create a password" autocomplete="new-password" minlength="6" required="">
+                            </div>
+                            <button type="submit">Create Account</button>
+                        </form>
+                    </div>
+
+                    <div class="auth-panel" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                        <form id="login-form">
+                            <div>
+                                <label for="login-email">Email</label>
+                                <input id="login-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required="">
+                            </div>
+                            <div>
+                                <label for="login-password">Password</label>
+                                <input id="login-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required="">
+                            </div>
+                            <button type="submit">Log In</button>
+                        </form>
+                    </div>
+                    <p class="auth-status" id="auth-status" role="status" aria-live="polite">Sign up or log in to unlock the Galaxy Gaming Hub.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section protected-section">
+            <div class="container">
+                <h2>About Galaxy</h2>
+                <div class="about-box">
+                    <p>Galaxy Gaming Hub is a welcoming online home for players who want to discover games, connect with other gamers, and enjoy a friendly gaming community.</p>
+                    <p>Use this website to explore our gaming stations, view the games available, check opening hours and events, and learn about the services offered at the hub. Whether you play casually, compete with a team, or are discovering gaming for the first time, Galaxy is designed to make every visit comfortable and exciting.</p>
+                    <p>Our goal is to create a safe and social space where friends, families, students, and competitive players can play together, share experiences, and build new connections.</p>
+                    <div class="stat">
+                    </div>
+                    </div>
+                </div>
+            
+        </section>
+
+        <section id="services" class="section alt protected-section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="feature-grid">
+                    <article class="card">
+                        <div class="icon">🎮</div>
+                        <h3>Gaming PCs</h3>
+                        <p>Play on powerful gaming PCs with smooth performance for casual and competitive gaming.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">📶</div>
+                        <h3>Fast Connection</h3>
+                        <p>Stay connected with reliable internet access for gaming, streaming, and socializing.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">🏆</div>
+                        <h3>Tournaments</h3>
+                        <p>Join friendly competitions, test your skills, and compete for prizes with other players.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">👥</div>
+                        <h3>Team Play</h3>
+                        <p>Team up with friends, meet new players, and enjoy cooperative gaming in a welcoming space.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">📹</div>
+                        <h3>Streaming Support</h3>
+                        <p>Capture gameplay, create content, and share your best gaming moments with your audience.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="icon">🎉</div>
+                        <h3>Gaming Events</h3>
+                        <p>Plan group sessions, gaming nights, and community events for friends, families, and teams.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="games" class="section alt protected-section">
+            <div class="container">
+                <h2>Official Game Launchers</h2>
+                <p class="store-intro">Install an official launcher, then use Open Installed App to start the game.</p>
+                <button onclick="window.open('https://wutheringwaves.kurogames.com/')">
+    Open Wuthering Waves
+</button>
+                <div class="game-grid">
+                    <article class="game-card"><div class="icon">🎮</div><h3>Fortnite</h3><a class="app-link" href="https://store.epicgames.com/en-US/download" target="_blank" rel="noopener noreferrer">Get Epic Games Launcher</a><a class="app-link game-launch-link" href="com.epicgames.launcher://apps/Fortnite?action=launch" data-game="Fortnite">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🕹️</div><h3>VALORANT</h3><a class="app-link" href="https://playvalorant.com/en-us/download/" target="_blank" rel="noopener noreferrer">Get Riot Client</a><a class="app-link game-launch-link" href="riotclient://launch-product/valorant" data-game="VALORANT">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🧱</div><h3>Minecraft</h3><a class="app-link" href="https://www.minecraft.net/en-us/download" target="_blank" rel="noopener noreferrer">Get Minecraft Launcher</a><a class="app-link game-launch-link" href="minecraft://" data-game="Minecraft">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🏆</div><h3>PUBG</h3><a class="app-link" href="https://store.steampowered.com/about/" target="_blank" rel="noopener noreferrer">Get Steam</a><a class="app-link game-launch-link" href="steam://run/578080" data-game="PUBG">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">⚽</div><h3>EA SPORTS FC</h3><a class="app-link" href="https://www.ea.com/ea-app" target="_blank" rel="noopener noreferrer">Get EA app</a><a class="app-link game-launch-link" href="eaapp://" data-game="EA SPORTS FC">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">⚔️</div><h3>Genshin Impact</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=genshin" data-game="Genshin Impact">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🌊</div><h3>Wuthering Waves</h3><a class="app-link" href="https://wutheringwaves.kurogames.com/" target="_blank" rel="noopener noreferrer">Get Wuthering Waves</a><a class="app-link game-launch-link" href="wutheringwaves://" data-game="Wuthering Waves">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">⚡</div><h3>Honkai Impact 3rd</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=bh3" data-game="Honkai Impact 3rd">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🚂</div><h3>Honkai: Star Rail</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=hkrpg" data-game="Honkai: Star Rail">Open Installed App</a></article>
+                    <article class="game-card"><div class="icon">🔨</div><h3>Zenless Zone Zero</h3><a class="app-link" href="https://hoyoplay.hoyoverse.com/" target="_blank" rel="noopener noreferrer">Get HoYoPlay</a><a class="app-link game-launch-link" href="hoyoplay://launch?game_id=nap" data-game="Zenless Zone Zero">Open Installed App</a></article>               
+                 </div>
+                 <div class="game-card">
+    <h3>Roblox</h3>
+    <a class="app-link" href="https://www.roblox.com/download" target="_blank">
+        Get Roblox
+    </a>
+    <button onclick="alert('Open Roblox from your desktop or Start Menu.')">
+        Open Installed App
+    </button>
+</div>
+
+<div class="game-card">
+    <h3>Mobile Legends</h3>
+    <a class="app-link" href="https://mobilelegends.com/" target="_blank">
+        Get Mobile Legends
+    </a>
+    <button onclick="alert('Mobile Legends is usually played on mobile. Open it from your device or emulator.')">
+        Open Installed App
+    </button>
+</div>
+
+                <p class="store-status" id="launcher-status" role="status" aria-live="polite">Install a launcher first, then choose Open Installed App.</p>
+           </div>
+        </section>
+            <div class="container">
+                <h2>Animation &amp; Video Editing</h2>
+                <div class="creative-grid">
+                    <article class="creative-card service-box">
+                        <div class="icon">🎬</div>
+                        <h3>Animation Editing</h3>
+                        <p>We create creative animations for school projects, business promotions, and social media content.</p>
+                        <div class="app-links" aria-label="Animation applications">
+                            <a class="app-link" href="https://www.blender.org/" target="_blank" rel="noopener noreferrer">Blender</a>
+                            <a class="app-link" href="https://www.canva.com/create/animated-videos/" target="_blank" rel="noopener noreferrer" aria-label="Open Canva animated video creator">Canva Animator</a>
+                        </div>
+                    </article>
+
+                    <article class="creative-card service-box">
+                        <div class="icon">🎞️</div>
+                        <h3>Video Editing</h3>
+                        <p>We edit gaming videos, vlogs, short films, and promotional videos with professional effects.</p>
+                        <div class="app-links" aria-label="Video editing applications">
+                            <a class="app-link" href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer">DaVinci Resolve</a>
+                            <a class="app-link" href="https://www.adobe.com/products/premiere.html" target="_blank" rel="noopener noreferrer">Adobe Premiere Pro</a>
+                            <a class="app-link" href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer">CapCut</a>
+                            <a class="app-link" href="https://www.canva.com/video-editor/" target="_blank" rel="noopener noreferrer" aria-label="Open Canva video editor">Canva Video Editor</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+ <section id="games" class="section alt protected-section">
+    <div class="container"></div>
+       
+                <h2>Gaming Events</h2>
+                <div class="info-box">
+                    <p>Valorant Tournament - Every Saturday</p>
+                    <p>Mobile Legends Tournament - Every Sunday</p>
+                </div>
+            
+        </section>
+    <div class="leaderboard-box">
+    <h3>🏆 Valorant Leaderboard</h3>
+    <p>Top Mission Score: 2,300 XP</p>
+</div>
+
+<div class="leaderboard-box">
+    <h3>🏆 Minecraft Leaderboard</h3>
+    <p>Top Mission Score: 2,100 XP</p>
+</div>
+
+<div class="leaderboard-box">
+    <h3>🏆 PUBG Leaderboard</h3>
+    <p>Top Mission Score: 2,000 XP</p>
+</div>
+
+<div class="leaderboard-container">
+
+    <!-- All leaderboard boxes here -->
+
+</div>
+  <section class="protected-section">
+    <div class="leaderboard-box">
+    <h3>🏆 Fortnite Leaderboard</h3>
+
+    <p>⭐ Rank: Galaxy Elite</p>
+    <p>⚡ Power: 8,500</p>
+    <p>🎯 Points: 12,000</p>
+    <p>🪙 Coins: 5,500</p>
+    <p>🔥 Missions Completed: 120</p>
+    <p>🎁 Rewards Claimed: 35</p>
+</div>
+   
+</section>
+<div class="leaderboard-box">
+    <h3>🌟 Rookie</h3>
+    <p>0 - 999 Power</p>
+</div>
+<div class="leaderboard-box">
+    <h3>⭐ Bronze</h3>
+    <p>1,000 - 2,999 Power</p>
+</div>
+<div class="leaderboard-box">
+    <h3>✨ Silver</h3>
+    <p>3,000 - 4,999 Power</p>
+</div>
+<div class="leaderboard-box">
+    <h3>💎 Gold</h3>
+    <p>5,000 - 6,999 Power</p>
+</div>
+<div class="leaderboard-box">
+    <h3>🔥 Platinum</h3>
+    <p>7,000 - 8,999 Power</p>
+</div>
+<div class="leaderboard-box">
+    <h3>⚡ Diamond</h3>
+    <p>9,000 - 11,999 Power</p>
+</div>
+🌌 Galaxy Elite  12,000+
+
+<div class="leaderboard-card">
+    <h2>🏆 Mobile Legends Leaderboard</h2>
+
+    <div class="player-rank first">
+        <span>#1</span>
+        <span>Mythical Immortal</span>
+        <span>150 Stars</span>
+    </div>
+
+    <div class="player-rank second">
+        <span>#2</span>
+        <span>Mythical Glory</span>
+        <span>95 Stars</span>
+    </div>
+
+    <div class="player-rank third">
+        <span>#3</span>
+        <span>Mythical Honor</span>
+        <span>45 Stars</span>
+    </div>
+
+    <div class="player-rank">
+        <span>#4</span>
+        <span>Legend I</span>
+        <span>★★★★★</span>
+    </div>
+
+    <div class="player-rank">
+        <span>#5</span>
+        <span>Epic I</span>
+        <span>★★★★★</span>
+    </div>
+</div>
+
+<div class="leaderboard-box">
+    <h3>🌌 Galaxy Pass</h3>
+    <p>Tier: 25</p>
+    <p>Rewards Unlocked: 18</p>
+    <p>Next Reward: 500 Coins</p>
+</div>
+ 
+<div class="leaderboard-box">
+    <h3>🏆 Achievements</h3>
+    <p>✔ First Login</p>
+    <p>✔ Mission Master</p>
+    <p>✔ Coin Collector</p>
+    <p>✔ Galaxy Explorer</p>
+</div>
+
+
+
+  
+
+        <section class="section protected-section">
+            <div class="container">
+                <h2>About Galaxy Gaming Hub</h2>
+                <div class="info-box">
+                    <p><strong>About Galaxy Gaming Hub:</strong> Galaxy Gaming Hub is a unique place where gamers come together. We offer a cozy environment, high-performance gaming stations. Whether you're here to relax, socialize, or compete, we provide the perfect setting for everyone.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section alt protected-section">
+            <div class="container">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Enter your Gmail to receive updates.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your Gmail address" aria-label="Gmail address" required="">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section id="videos" class="section alt protected-section">
+            <div class="container">
+                
+                <h2>🎥 Featured Videos</h2>
+                <div class="video-grid">
+                    <video width="250" height="450" controls="">
+                        Featured gameplay video coming soon.
+                    </video>
+
+                    <video width="250" height="450" controls="">
+                        Community highlights coming soon.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="chat" class="section protected-section">
+            <div class="container contact-box">
+                <h2>💬 AI Helper Alexander</h2>
+                <div class="chat-box" id="chat-messages" aria-live="polite">
+                    <p><strong>Alexander:</strong> Hello! I am Alexander, your Galaxy Gaming AI helper. How can I help you today?</p>
+                </div>
+                <form class="chat-form" id="chat-form">
+                    <input id="chat-input" type="text" placeholder="Type your message..." autocomplete="off" required="">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="gamer-chat" class="section alt protected-section">
+            <div class="container contact-box">
+                <h2>🎮 Gamer Chat</h2>
+                <p>Chat with other Galaxy players, share game tips, and find teammates.</p>
+                <div class="chat-box" id="gamer-messages" aria-live="polite">
+                    <p><strong>Galaxy Gamer:</strong> Welcome to the community chat!</p>
+                </div>
+                <form class="chat-form" id="gamer-chat-form">
+                    <input id="gamer-name" type="text" placeholder="Your gamer name" autocomplete="nickname" required="">
+                    <input id="gamer-message" type="text" placeholder="Write a message..." autocomplete="off" required="">
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Galaxy Gaming Coffee Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./Galaxy Gaming Hub_files/script.js.download" defer=""></script>
+    <!-- Previous inline JavaScript retained for reference during the split.
+    <script>
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authPanels = document.querySelectorAll('.auth-panel');
+        const authStatus = document.querySelector('#auth-status');
+        const protectedSections = document.querySelectorAll('main > section:not(.hero):not(#account)');
+        const protectedLinks = document.querySelectorAll('.nav-links a:not([href="#account"])');
+
+        protectedSections.forEach((section) => section.classList.add('protected-section'));
+
+        const unlockSite = (message) => {
+            document.body.classList.add('authenticated');
+            document.body.classList.remove('auth-locked');
+            sessionStorage.setItem('galaxy-authenticated', 'true');
+            authStatus.textContent = message;
+        };
+
+        if (sessionStorage.getItem('galaxy-authenticated') === 'true') {
+            unlockSite('You are signed in. All Galaxy features are unlocked.');
+        }
+
+        protectedLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                if (!document.body.classList.contains('authenticated')) {
+                    event.preventDefault();
+                    authStatus.textContent = 'Please sign up or log in before accessing this area.';
+                    document.querySelector('#account').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        authTabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                authTabs.forEach((currentTab) => {
+                    const isActive = currentTab === tab;
+                    currentTab.classList.toggle('active', isActive);
+                    currentTab.setAttribute('aria-selected', String(isActive));
+                });
+
+                authPanels.forEach((panel) => {
+                    panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+                });
+            });
+        });
+
+        document.querySelectorAll('#signup-form, #login-form').forEach((form) => {
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const button = form.querySelector('button[type="submit"]');
+                button.textContent = form.id === 'signup-form' ? 'Account Created' : 'Logged In';
+                button.disabled = true;
+                unlockSite(form.id === 'signup-form'
+                    ? 'Account created. All Galaxy features are now unlocked.'
+                    : 'You are logged in. All Galaxy features are now unlocked.');
+            });
+        });
+
+        const newsletterForm = document.querySelector('#newsletter-form');
+        const newsletterStatus = document.querySelector('#newsletter-status');
+
+        newsletterForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            newsletterStatus.textContent = 'Thanks! You are subscribed to Galaxy updates.';
+            newsletterForm.reset();
+        });
+
+        const chatForm = document.querySelector('#chat-form');
+        const chatInput = document.querySelector('#chat-input');
+        const chatMessages = document.querySelector('#chat-messages');
+
+        chatForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            const userMessage = document.createElement('p');
+            userMessage.textContent = 'You: ' + message;
+            chatMessages.appendChild(userMessage);
+
+            const reply = document.createElement('p');
+            reply.textContent = 'Alexander: Thanks for your message! I will help you with Galaxy Gaming information.';
+            chatMessages.appendChild(reply);
+
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    </script>
+    -->
+
+
+
+</body></html>
