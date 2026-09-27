@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Game Launcher — Galaxy Gaming Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+
+        .launcher-hero {
+            text-align: center;
+            padding: 56px 0 24px;
+        }
+        .launcher-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin: 0 0 0.6rem;
+            color: var(--text);
+        }
+        .launcher-hero p {
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 0.5rem;
+            font-size: 1rem;
+        }
+        .launcher-hero .note {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: rgba(70,183,255,0.08);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .launcher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+            gap: 1.25rem;
+            padding: 2rem 0 5rem;
+        }
+
+        .launcher-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.4rem 1.2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.7rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .launcher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(70,183,255,0.18);
+        }
+        .launcher-card img {
+            width: 86px;
+            height: 86px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            background: #081426;
+        }
+        .launcher-card .game-emoji {
+            font-size: 3rem;
+            line-height: 1;
+        }
+        .launcher-card h3 {
+            margin: 0;
+            color: var(--text);
+            font-size: 1.05rem;
+        }
+        .launcher-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.86rem;
+            flex: 1;
+        }
+        .launcher-card .status-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+        .status-badge.installed   { background: rgba(0,255,120,0.12); color: #00e676; border: 1px solid rgba(0,255,120,0.3); }
+        .status-badge.browser     { background: rgba(70,183,255,0.1);  color: var(--primary-2); border: 1px solid var(--line); }
+
+        .launch-actions {
+            display: flex;
+            gap: 0.55rem;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-launch {
+            flex: 1;
+            min-width: 110px;
+            padding: 0.65rem 0.8rem;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-2));
+            color: #031015;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .btn-launch:hover { box-shadow: 0 0 22px rgba(70,183,255,0.85), 0 6px 18px rgba(70,183,255,0.4); transform: translateY(-2px); }
+        .btn-launch { box-shadow: 0 0 12px rgba(70,183,255,0.45); transition: box-shadow 0.25s, transform 0.2s; }
+        .launcher-card { border-color: rgba(70,183,255,0.25); transition: transform 0.2s, box-shadow 0.25s, border-color 0.25s; }
+        .launcher-card:hover { border-color: rgba(70,183,255,0.65); box-shadow: 0 0 28px rgba(70,183,255,0.35), 0 14px 32px rgba(0,0,0,0.2); }
+        h1 { text-shadow: 0 0 18px rgba(70,183,255,0.4); }
+        .topbar { box-shadow: 0 0 24px rgba(70,183,255,0.2); border-bottom-color: rgba(70,183,255,0.45); }
+        .btn-download {
+            padding: 0.65rem 0.75rem;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .btn-download:hover { background: rgba(255,255,255,0.12); color: var(--primary-2); }
+
+        /* Toast notification */
+        #launch-toast {
+            position: fixed;
+            bottom: 1.75rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(90px);
+            background: rgba(10,20,36,0.97);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 0.9rem 1.6rem;
+            color: var(--primary-2);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.3s cubic-bezier(.175,.885,.32,1.275);
+            z-index: 999;
+            pointer-events: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        #launch-toast.show { transform: translateX(-50%) translateY(0); }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--primary-2);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .back-link:hover { color: var(--primary); }
+
+        @media (max-width: 600px) {
+            .launcher-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 380px) {
+            .launcher-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ── Top bar ── -->
+    <header class="topbar">
+        <div class="container nav">
+            <div class="brand">
+                <div class="brand-mark">
+                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#74f1ff"/>
+                                <stop offset="100%" stop-color="#00e5ff"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="url(#g1)" stroke-width="4"/>
+                        <circle cx="45" cy="42" r="8" fill="#74f1ff" opacity="0.9"/>
+                        <path d="M29 56c0-10 8-18 18-18h26c10 0 18 8 18 18v13c0 12-10 22-22 22H51c-12 0-22-10-22-22V56z"
+                              fill="none" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M36 51h48" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M49 75h22l-4 11H53l-4-11z" fill="url(#g1)" opacity="0.9"/>
+                        <path d="M29 69h62" stroke="#74f1ff" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+                    </svg>
+                </div>
+                <span>Galaxy</span>
+            </div>
+            <nav class="nav-links" aria-label="Launcher navigation">
+                <a href="Galaxy Gaming Hub.html">🏠 Hub</a>
+                <a href="Galaxy Gaming Hub.html#games">Games</a>
+                <a href="Galaxy Gaming Hub.html#missions">Missions</a>
+                <a href="Galaxy Gaming Hub.html#store">Store</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="launcher-hero">
+                <a class="back-link" href="Galaxy Gaming Hub.html">← Back to Galaxy Hub</a>
+                <h1>🎮 Game Launcher</h1>
+                <p>Hit <strong>▶ Launch</strong> to open the game if it's installed on your PC or phone.<br>
+                   Hit <strong>⬇ Get It</strong> to go to the official download page.</p>
+                <span class="note">💡 Deep-link launch works if you have the game's client installed. If not, the official website opens automatically.</span>
+            </section>
+
+            <div class="launcher-grid" id="launcher-grid">
+                <!-- Cards built by JS below -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Galaxy Gaming Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="launch-toast" role="status" aria-live="polite"></div>
+
+    <script>
+    // ─────────────────────────────────────────────────────────────────────────
+    // GAME CATALOG
+    // deepLink  : custom URL scheme registered by the installed game client.
+    //             Works on PC (Windows) and mobile if the app is installed.
+    // site      : official website — opened in a new tab as fallback.
+    // download  : direct installer / download page.
+    // img       : local image file (from the workspace).
+    // emoji     : shown when no local image is available.
+    // ─────────────────────────────────────────────────────────────────────────
+    const GAMES = [
+        {
+            key: 'valorant',
+            name: 'Valorant',
+            img: 'valorant.png',
+            desc: '5v5 tactical shooter by Riot Games. Aim, strategize, win.',
+            deepLink: 'valorant://',          // opens Riot Client → Valorant
+            site: 'https://playvalorant.com/',
+            download: 'https://playvalorant.com/en-us/download/',
+        },
+        {
+            key: 'roblox',
+            name: 'Roblox',
+            img: 'roblox.png',
+            desc: 'Build, explore and play millions of user-created games.',
+            deepLink: 'roblox-player://0+launchmode:play',
+            site: 'https://www.roblox.com/',
+            download: 'https://www.roblox.com/download',
+        },
+        {
+            key: 'genshin',
+            name: 'Genshin Impact',
+            img: 'star rail.jpg',
+            desc: 'Open-world action RPG with elemental combat and rich story.',
+            deepLink: null,                   // no registered protocol on PC
+            site: 'https://genshin.hoyoverse.com/',
+            download: 'https://genshin.hoyoverse.com/en-us/download/',
+        },
+        {
+            key: 'starrail',
+            name: 'Honkai: Star Rail',
+            img: 'Honkai.png',
+            desc: 'Turn-based space RPG — explore the cosmos on the Astral Express.',
+            deepLink: null,
+            site: 'https://hsr.hoyoverse.com/',
+            download: 'https://hsr.hoyoverse.com/en-us/download/',
+        },
+        {
+            key: 'wuthering',
+            name: 'Wuthering Waves',
+            img: 'Wuwe.png',
+            desc: 'High-speed action RPG with fluid combat and open-world exploration.',
+            deepLink: null,
+            site: 'https://wutheringwaves.kurogames.com/',
+            download: 'https://wutheringwaves.kurogames.com/en/main',
+        },
+        {
+            key: 'zenless',
+            name: 'Zenless Zone Zero',
+            img: 'zenless.png',
+            desc: 'Urban action RPG set in a post-apocalyptic city full of anomalies.',
+            deepLink: null,
+            site: 'https://zenless.hoyoverse.com/',
+            download: 'https://zenless.hoyoverse.com/en-us/download/',
+        },
+        {
+            key: 'honkai3',
+            name: 'Honkai Impact 3rd',
+            emoji: '⚡',
+            desc: 'Fast-paced action game with stunning combat and anime-style story.',
+            deepLink: null,
+            site: 'https://honkaiimpact3.hoyoverse.com/',
+            download: 'https://honkaiimpact3.hoyoverse.com/en-us/download/',
+        },
+        {
+            key: 'mlbb',
+            name: 'Mobile Legends',
+            img: 'mobile legend.png',
+            desc: '5v5 MOBA — fast matches, 10-minute games, big plays.',
+            deepLink: 'mobilelegends://',     // works on Android/iOS with app installed
+            site: 'https://m.mobilelegends.com/',
+            download: 'https://www.mobilelegends.com/en/download',
+        },
+        {
+            key: 'minecraft',
+            emoji: '⛏️',
+            name: 'Minecraft',
+            desc: 'Build, survive and explore infinite procedurally generated worlds.',
+            deepLink: 'minecraft://',          // Minecraft Launcher protocol
+            site: 'https://www.minecraft.net/',
+            download: 'https://www.minecraft.net/en-us/download',
+        },
+        {
+            key: 'fortnite',
+            emoji: '🎯',
+            name: 'Fortnite',
+            desc: 'Battle royale — 100 players drop in, only one squad wins.',
+            deepLink: 'com.epicgames.fortnite://', // Epic Games launcher protocol
+            site: 'https://www.fortnite.com/',
+            download: 'https://www.epicgames.com/fortnite/en-US/download',
+        },
+        {
+            key: 'pubg',
+            emoji: '🪖',
+            name: 'PUBG',
+            desc: 'Squad up and fight to be the last team standing on the island.',
+            deepLink: 'steam://rungameid/578080', // Steam deep link for PUBG
+            site: 'https://pubg.com/',
+            download: 'https://store.steampowered.com/app/578080/PUBG/',
+        },
+        {
+            key: 'easportsfc',
+            emoji: '⚽',
+            name: 'EA Sports FC 25',
+            desc: 'The world\'s biggest football game — play Ultimate Team and Career Mode.',
+            deepLink: 'origin2://game/launch?offerIds=Origin.OFR.50.0003340', // EA App protocol
+            site: 'https://www.ea.com/games/ea-sports-fc',
+            download: 'https://www.ea.com/games/ea-sports-fc/ea-sports-fc-25/buy',
+        },
+    ];
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // TOAST
+    // ─────────────────────────────────────────────────────────────────────────
+    const toastEl = document.getElementById('launch-toast');
+    let toastTimer;
+    function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3800);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // LAUNCH LOGIC
+    // Strategy:
+    //  1. If the game has a deep link, try opening it via a hidden <iframe>
+    //     (avoids navigating away from this page).
+    //  2. After 2 s, if the page is still visible the game probably isn't
+    //     installed — open the official website as fallback.
+    //  3. If no deep link, go straight to the official site.
+    // ─────────────────────────────────────────────────────────────────────────
+    function launchGame(game) {
+        if (game.deepLink) {
+            showToast(`🚀 Launching ${game.name}… (game must be installed)`);
+
+            // hidden iframe trick — won't throw an error if protocol unknown
+            const frame = document.createElement('iframe');
+            frame.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;border:0';
+            document.body.appendChild(frame);
+            try { frame.contentWindow.location.href = game.deepLink; } catch (_) {}
+
+            // Fallback: open official site in new tab after 2 s if still here
+            const fallbackTimer = setTimeout(() => {
+                if (!document.hidden) {
+                    showToast(`⚠️ ${game.name} not found locally — opening the website instead.`);
+                    window.open(game.site, '_blank', 'noopener,noreferrer');
+                }
+                frame.remove();
+            }, 2000);
+
+            // If page went to background (game opened), cancel fallback
+            document.addEventListener('visibilitychange', function handler() {
+                if (document.hidden) {
+                    clearTimeout(fallbackTimer);
+                    frame.remove();
+                    document.removeEventListener('visibilitychange', handler);
+                }
+            });
+
+        } else {
+            // No registered protocol — go straight to official site
+            showToast(`🌐 Opening ${game.name} on the web…`);
+            window.open(game.site, '_blank', 'noopener,noreferrer');
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // BUILD CARDS
+    // ─────────────────────────────────────────────────────────────────────────
+    const grid = document.getElementById('launcher-grid');
+
+    GAMES.forEach(game => {
+        const card = document.createElement('article');
+        card.className = 'launcher-card';
+
+        // Thumbnail — local image with emoji fallback
+        let thumbHTML;
+        if (game.img) {
+            thumbHTML = `
+                <img src="${game.img}" alt="${game.name}"
+                     onerror="this.style.display='none';document.getElementById('em-${game.key}').style.display='block'">
+                <span class="game-emoji" id="em-${game.key}" style="display:none">${game.emoji || '🎮'}</span>`;
+        } else {
+            thumbHTML = `<span class="game-emoji">${game.emoji || '🎮'}</span>`;
+        }
+
+        // Status badge
+        const badgeHTML = game.deepLink
+            ? `<span class="status-badge installed">⚡ Launcher supported</span>`
+            : `<span class="status-badge browser">🌐 Opens in browser</span>`;
+
+        card.innerHTML = `
+            ${thumbHTML}
+            <h3>${game.name}</h3>
+            <p>${game.desc}</p>
+            ${badgeHTML}
+            <div class="launch-actions">
+                <button class="btn-launch" aria-label="Launch ${game.name}">▶ Launch</button>
+                <a class="btn-download"
+                   href="${game.download}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Download ${game.name}">⬇ Get It</a>
+            </div>
+        `;
+
+        card.querySelector('.btn-launch').addEventListener('click', () => launchGame(game));
+        grid.appendChild(card);
+    });
+    </script>
+</body>
+</html>
